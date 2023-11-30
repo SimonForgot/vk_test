@@ -8,6 +8,7 @@ if "%1"=="" (
     ::vs2022 :"Visual Studio 17 2022" -A x64
     cmake -Bbuild -G "Visual Studio 16 2019" -A x64 ^
     -Dglfw3_DIR="D:\app\glfw\lib\cmake\glfw3" ^
+    -Dglm_DIR="D:\app\glm\cmake\glm" ^
     -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR%
 )else if "%1"=="c" (
     cmake --build build -j36 --config Release --clean-first

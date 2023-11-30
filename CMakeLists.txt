@@ -10,8 +10,9 @@ project(${ProjectId} LANGUAGES CXX)
 
 find_package(Vulkan REQUIRED)
 find_package(glfw3 REQUIRED)
+find_package(glm REQUIRED)
 
 add_executable(${ProjectId} main.cpp)
-target_link_libraries(${ProjectId}  PRIVATE Vulkan::Vulkan glfw)
+target_link_libraries(${ProjectId}  PRIVATE Vulkan::Vulkan glfw glm::glm)
 
 add_custom_target(run COMMAND $<TARGET_FILE:${ProjectId}>)
