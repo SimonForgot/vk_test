@@ -14,5 +14,6 @@ find_package(glm REQUIRED)
 
 add_executable(${ProjectId} main.cpp)
 target_link_libraries(${ProjectId}  PRIVATE Vulkan::Vulkan glfw glm::glm)
+target_compile_options(${ProjectId} PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/MD>)
 
 add_custom_target(run COMMAND $<TARGET_FILE:${ProjectId}>)

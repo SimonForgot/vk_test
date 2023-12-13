@@ -9,14 +9,15 @@ if "%1"=="" (
     cmake -Bbuild -G "Visual Studio 16 2019" -A x64 ^
     -Dglfw3_DIR="D:\app\glfw\lib\cmake\glfw3" ^
     -Dglm_DIR="D:\app\glm\cmake\glm" ^
+    ::-DCMAKE_VERBOSE_MAKEFILE=ON ^
     -DCMAKE_INSTALL_PREFIX=%INSTALL_DIR%
 )else if "%1"=="c" (
-    cmake --build build -j36 --config Release --clean-first
+    cmake --build build -j36 --config Debug --clean-first
 )else if "%1"=="i" (
     RMDIR /S /Q %INSTALL_DIR%
     cmake --install build
 )else if "%1"=="r" (
-    cmake --build build --target run --config Release
+    cmake --build build --target run --config Debug
 )
 
 ::build & install command
