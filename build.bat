@@ -6,7 +6,7 @@ if "%1"=="" (
     ::vs2017 :"Visual Studio 15 2017 Win64"    
     ::vs2019 :"Visual Studio 16 2019" -A x64
     ::vs2022 :"Visual Studio 17 2022" -A x64
-    cmake -Bbuild -G "Visual Studio 17 2022" -A x64 ^
+    cmake -Bbuild -G "Visual Studio 16 2019" -A x64 ^
     -Dglfw3_DIR="D:\app\glfw\lib\cmake\glfw3" ^
     -Dglm_DIR="D:\app\glm\cmake\glm" ^
     ::-DCMAKE_VERBOSE_MAKEFILE=ON ^
